@@ -8,4 +8,4 @@ var MineralSchema = new mongoose.Schema({
     luster: String
 })
 
-mongoose.model('MineralData', MineralSchema, 'minerals');
+mongoose.model('MineralData', MineralSchema, 'MineralData');

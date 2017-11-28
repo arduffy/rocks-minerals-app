@@ -8,12 +8,17 @@
   rockData.$inject = ['$http'];
   function rockData ($http) {
       var getRocks = function(){
-          return $http.get('/api/rocksdata');
+          return $http.get('/api/rocks/');
+      }
+      
+      var getRockTypes = function(){
+        return $http.get('/api/rocktypes');
       }
 
       return {
           getRocks : getRocks,
-  }
+          getRockTypes: getRockTypes
+      }
   }
 
 })();

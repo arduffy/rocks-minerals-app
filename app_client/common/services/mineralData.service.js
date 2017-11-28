@@ -10,10 +10,15 @@
       var getMinerals = function(){
           return $http.get('/api/mineraldata');
       }
+      
+      var getMineralTypes = function(){
+          return $http.get('/api/mineraltypes');
+      }
 
       return {
-          getMinerals : getMinerals,
-  }
+          getMinerals : getMinerals, 
+          getMineralTypes: getMineralTypes
+      }
   }
 
 })();

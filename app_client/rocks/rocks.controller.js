@@ -21,12 +21,13 @@
         //check selected Type
         if (SelectedData.selectedType !== null) {
             vm.selectedType = SelectedData.SelectedType
+        }
             
         //refactored for Angular 1.6 - removed success/error, used Promises...
-        vm.getRockData = function() {
-            RockData.getRocks()
+        vm.getRockTypeData = function() {
+            RockData.getRockTypes()
                 .then(function(response) {
-                    vm.rocks = response.data;
+                    vm.rocktypes = response.data;
                     console.log(response);
                 })
                 .catch(function(e) {
@@ -49,7 +50,8 @@
       vm.selectedType = null;
     }
     
-        //saved departure
+    
+    //saved departure
     $scope.$watch(
       function(){
         return vm.selectedType;    
@@ -65,7 +67,7 @@
     );
     
         //call services
-        vm.getRockData();
+        vm.getRockTypeData();
     }
 
 })();

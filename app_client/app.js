@@ -19,7 +19,7 @@
       })
       .when('/rocks/', {
         templateUrl: '/rocks/rocks.view.html',
-        controller: 'rocksCtrl',
+        controller: 'rockCtrl',
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/'});

@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var MineralData = mongoose.model('MineralData');
+var MineralType = mongoose.model('MineralTypeData')
 
 //utility method for the module
 var sendJSONresponse = function(res, status, content)
@@ -25,7 +26,24 @@ module.exports.mineralsReadAll = function(req, res)
     });
 }
 
+//get all mineral type data records
+module.exports.mineralTypesReadAll = function(req, res)
+{
+  console.log("Finding all Mineral Type Data Records", req);
+  
+  MineralType
+    .find({})
+    .exec(function(err, mineralTypes){
+      if(err){
+        console.log(err);
+        sendJSONresponse(res, 404, err);
+      }
+      console.log(mineralTypes);
+      sendJSONresponse(res, 200, mineralTypes);
+    });
+}
 
+/*
 module.exports.mineralsReadOne = function(req, res) {
     console.log('Finding Minerals Record', req.params);
     if (req.params && req.params.type) {
@@ -56,3 +74,4 @@ module.exports.mineralsReadOne = function(req, res) {
         });
     }
 };
+*/

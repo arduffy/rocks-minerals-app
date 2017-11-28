@@ -8,4 +8,4 @@ var rockSchema = new mongoose.Schema({
     color: String
 });
 
-mongoose.model('RockData', rockSchema, 'rocks');
+mongoose.model('RockData', rockSchema, 'RockData');

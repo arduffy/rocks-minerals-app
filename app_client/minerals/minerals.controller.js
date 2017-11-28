@@ -12,12 +12,11 @@
     if (window.location.pathname !== '/') {
       window.location.href = '/#' + window.location.pathname;
     }*/
-    var vm =this;
     console.log(window.location);    
     
     
     var vm = this;
-    vm.content = "Mineral Data";
+    vm.content = "Amanda's Mineral Data";
     vm.selectedType = "";
 
     //check selected Mineral Type
@@ -26,10 +25,10 @@
     }
 
     //refactored for Angular 1.6 - removed success/error, used Promises...
-    vm.getMineralData = function() {
-      MineralData.getMinerals()
+    vm.getMineralTypeData = function() {
+      MineralData.getMineralTypes()
         .then(function(response) {
-          vm.minerals = response.data;
+          vm.mineraltypes = response.data;
           console.log(response);
         })
         .catch(function(e) {
@@ -48,7 +47,6 @@
     };
     
     vm.clearSelectedData = function(){
-      
       vm.selectedType = null;
     }
 
@@ -71,7 +69,7 @@
     
 
     //call services
-    vm.getMineralData();
+    vm.getMineralTypeData();
 
   }
 

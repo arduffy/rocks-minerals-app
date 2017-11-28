@@ -8,13 +8,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Please select the type of mineral you would like to view..</h1>
+                    <h2>{{vm.content}}</h2>
                         <form novalidate>
                             <div class="form-group">
                                 <label for="selectType">Mineral Type</label>
                                 <select id="selectType" 
                                         class="form-control" 
                                         ng-model="vm.selectedType" 
-                                        ng-options="min.type for min in vm.minerals"></select>
+                                        ng-options="mineraltype.type for mineraltype in vm.mineraltypes"></select>
                                 <p class="bg-info" ng-bind="vm.selectedType.type"></p>
                             </div>
                 
@@ -30,6 +31,10 @@
                             class="btn btn-default" 
                             id="clear-selected-data" 
                             ng-click="vm.clearSelectedData()">Clear Selected</button>
+                    <button type="button"
+                            class="btn btn-default"
+                            id="submit-selected-data"
+                            ng-click="vm.submitSelectedData()">Submit</button>
                 </div>
             </div>
         </div>

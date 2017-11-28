@@ -58,3 +58,5 @@ process.on('SIGTERM', function() {
 // BRING IN YOUR SCHEMAS & MODELS
 require('./mineralsData');
 require('./rocksData');
+require('./mineralType');
+require('./rockType');
