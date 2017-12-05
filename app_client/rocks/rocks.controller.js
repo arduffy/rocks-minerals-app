@@ -12,7 +12,7 @@
         if (window.location.pathname !== '/') {
           window.location.href = '/#' + window.location.pathname;
         }*/
-        console.log(window.location);
+        //console.log(window.location);
 
         var vm = this;
         vm.content = "Rock Data";
@@ -20,9 +20,11 @@
 
         //check selected Type
         if (SelectedData.selectedType !== null) {
-            vm.selectedType = SelectedData.SelectedType
-        }
             
+            vm.selectedType = SelectedData.SelectedType;
+            console.log("printing selected type: " + SelectedData.selectedType);
+        }
+
         //refactored for Angular 1.6 - removed success/error, used Promises...
         vm.getRockTypeData = function() {
             RockData.getRockTypes()
@@ -32,40 +34,42 @@
                 })
                 .catch(function(e) {
                     console.log(e);
-        });
-    }
-    
+                });
+        }
+
         vm.toggleMenu = function() {
-      if (vm.class === "toggled") {
-        vm.class = "";
-      }
-      else {
-        vm.class = "toggled";
-      }
-      console.log(vm.class + " is good");
-    };
-    
-        vm.clearSelectedData = function(){
-      
-      vm.selectedType = null;
-    }
-    
-    
-    //saved departure
-    $scope.$watch(
-      function(){
-        return vm.selectedType;    
-      }, 
-      function (newValue, oldValue) {
-        console.log(oldValue);
-        console.log(newValue);
-        if (newValue.type !== oldValue.type){
-          SelectedData.selectedType = newValue;
-        } 
-      }, 
-      true
-    );
-    
+            if (vm.class === "toggled") {
+                vm.class = "";
+            }
+            else {
+                vm.class = "toggled";
+            }
+            console.log(vm.class + " is good");
+        };
+
+        vm.clearSelectedData = function() {
+
+            vm.selectedType = null;
+        }
+
+
+        //saved departure
+        $scope.$watch(
+            function() {
+                return vm.selectedType;
+            },
+            function(newValue, oldValue) {
+
+                console.log(oldValue);
+                console.log(newValue);
+                if (newValue !== oldValue) {
+                    SelectedData.selectedType = newValue;
+                }
+                console.log("printing selected type: " + SelectedData.selectedType);
+            },
+            true
+        );
+
         //call services
         vm.getRockTypeData();
     }

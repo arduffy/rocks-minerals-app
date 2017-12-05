@@ -22,6 +22,11 @@
         controller: 'rockCtrl',
         controllerAs: 'vm'
       })
+      .when('/viewdetail', {
+        templateUrl: '/detailPage/mineralDetailPage.view.html',
+        controller: 'mineralDetailPageCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
       
       // use the HTML5 History API

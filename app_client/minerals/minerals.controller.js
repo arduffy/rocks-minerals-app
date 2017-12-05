@@ -4,9 +4,9 @@
     .module('rocks-minerals-app')
     .controller('mineralsCtrl', mineralsCtrl);
 
-  mineralsCtrl.$inject = ['$scope', 'MineralData', 'SelectedData'];
+  mineralsCtrl.$inject = ['$scope', 'MineralDataService', 'SelectedData'];
 
-  function mineralsCtrl($scope, MineralData, SelectedData) {
+  function mineralsCtrl($scope, MineralDataService, SelectedData) {
     // Nasty IE9 redirect hack (not recommended)
     /*
     if (window.location.pathname !== '/') {
@@ -26,7 +26,7 @@
 
     //refactored for Angular 1.6 - removed success/error, used Promises...
     vm.getMineralTypeData = function() {
-      MineralData.getMineralTypes()
+      MineralDataService.getMineralTypes()
         .then(function(response) {
           vm.mineraltypes = response.data;
           console.log(response);

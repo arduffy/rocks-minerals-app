@@ -43,6 +43,26 @@ module.exports.mineralTypesReadAll = function(req, res)
     });
 }
 
+//get specific mineral data by type
+module.exports.specificMineralType = function(req, res)
+{
+  console.log("Finding minerals by type", req.params);
+  if(req.params && req.params.type){
+  
+  MineralData
+    .find({type: req.params.type})
+    .exec(function(err, mineraldatabytype){
+      if(err){
+        console.log(err);
+        sendJSONresponse(res, 404, err);
+        return;
+      }
+      console.log(mineraldatabytype);
+      sendJSONresponse(res, 200, mineraldatabytype);
+    });
+  }
+}
+
 /*
 module.exports.mineralsReadOne = function(req, res) {
     console.log('Finding Minerals Record', req.params);

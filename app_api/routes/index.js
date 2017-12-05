@@ -11,5 +11,8 @@ router.get('/mineraltypes', ctrlMineralData.mineralTypesReadAll);
 router.get('/rocks', ctrlRockData.rocksReadAll);
 router.get('/rocktypes', ctrlRockData.rockTypesReadAll);
 
+router.get('/mineraltypes/:type', ctrlMineralData.specificMineralType);
+router.get('/mineraltypes', ctrlMineralData.specificMineralType );
+
 
 module.exports = router;
