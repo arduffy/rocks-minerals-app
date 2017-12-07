@@ -14,6 +14,7 @@
     }*/
     var vm = this;
     //console.log(window.location);
+    vm.content = "Mineral Detail Page";
 
     console.log("The selected type is: " + SelectedData.selectedType.type);
 
@@ -29,26 +30,29 @@
 
       MineralDataService.getMineralDataForType(vm.selectedType.type)
         .then(function(response) {
-          
-          console.log(response.data);
-          
-          //since find may select many, just return the single object
-          //vm.takeoffData = response.data;
-          //console.log(vm.takeoffData);
 
-          vm.name = response.data[0].name;
-          vm.hardness = response.data[0].hardness;
-          vm.streak = response.data[0].streak;
-          vm.luster - response.data[0].luster;
+          console.log(response.data);
+
+
+          vm.records = response.data;
+          
+
+
+
+
+          // vm.name = response.data[0].name;
+          // vm.hardness = response.data[0].hardness;
+          // vm.streak = response.data[0].streak;
+          // vm.luster - response.data[0].luster;
 
         })
         .catch(function(e) {
           console.log(e);
         });
     }
-    
+
     //call services
-    vm.getMineralDataForType(vm.selectedType);  
+    vm.getMineralDataForType(vm.selectedType);
 
   }
 

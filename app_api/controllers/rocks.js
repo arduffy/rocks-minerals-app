@@ -42,3 +42,23 @@ module.exports.rockTypesReadAll = function(req, res)
       sendJSONresponse(res, 200, rockTypes);
     });
 }
+
+//get specific rock data by type
+module.exports.specificRockType = function(req, res)
+{
+  console.log("Finding rocks by type", req.params);
+  if(req.params && req.params.type){
+  
+  RockData
+    .find({type: req.params.type})
+    .exec(function(err, rockdatabytype){
+      if(err){
+        console.log(err);
+        sendJSONresponse(res, 404, err);
+        return;
+      }
+      console.log(rockdatabytype);
+      sendJSONresponse(res, 200, rockdatabytype);
+    });
+  }
+}

@@ -1,4 +1,3 @@
-
 (function() {
 
   angular
@@ -19,8 +18,6 @@
       var getMineralDataForType = function(type){
           return $http.get('/api/mineraltypes/' + type)
       }
-      
-      
       
       return {
           getMinerals : getMinerals, 

@@ -19,12 +19,17 @@
       })
       .when('/rocks/', {
         templateUrl: '/rocks/rocks.view.html',
-        controller: 'rockCtrl',
+        controller: 'rocksCtrl',
         controllerAs: 'vm'
       })
-      .when('/viewdetail', {
+      .when('/viewdetailminerals', {
         templateUrl: '/detailPage/mineralDetailPage.view.html',
         controller: 'mineralDetailPageCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/viewdetailrocks', {
+        templateUrl: '/detailPage/rockDetailPage.view.html',
+        controller: 'rockDetailPageCtrl',
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/'});

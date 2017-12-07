@@ -16,7 +16,7 @@
     
     
     var vm = this;
-    vm.content = "Amanda's Mineral Data";
+    vm.content = "Mineral Type Data";
     vm.selectedType = "";
 
     //check selected Mineral Type

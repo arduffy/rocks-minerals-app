@@ -2,32 +2,30 @@
 
     angular
         .module('rocks-minerals-app')
-        .controller('rockCtrl', rockCtrl);
+        .controller('rocksCtrl', rocksCtrl);
 
-    rockCtrl.$inject = ['$scope', 'RockData', 'SelectedData'];
+    rocksCtrl.$inject = ['$scope', 'RockDataService', 'SelectedData'];
 
-    function rockCtrl($scope, RockData, SelectedData) {
+    function rocksCtrl($scope, RockDataService, SelectedData) {
         // Nasty IE9 redirect hack (not recommended)
         /*
         if (window.location.pathname !== '/') {
           window.location.href = '/#' + window.location.pathname;
         }*/
-        //console.log(window.location);
+        console.log(window.location);
 
         var vm = this;
-        vm.content = "Rock Data";
+        vm.content = "Rock Type Data";
         vm.selectedType = "";
 
-        //check selected Type
+        //check selected Rock Type
         if (SelectedData.selectedType !== null) {
-            
-            vm.selectedType = SelectedData.SelectedType;
-            console.log("printing selected type: " + SelectedData.selectedType);
+            vm.selectedType = SelectedData.selectedType;
         }
 
         //refactored for Angular 1.6 - removed success/error, used Promises...
         vm.getRockTypeData = function() {
-            RockData.getRockTypes()
+            RockDataService.getRockTypes()
                 .then(function(response) {
                     vm.rocktypes = response.data;
                     console.log(response);
@@ -48,7 +46,6 @@
         };
 
         vm.clearSelectedData = function() {
-
             vm.selectedType = null;
         }
 
@@ -59,13 +56,11 @@
                 return vm.selectedType;
             },
             function(newValue, oldValue) {
-
                 console.log(oldValue);
                 console.log(newValue);
-                if (newValue !== oldValue) {
+                if (newValue.type !== oldValue.type) {
                     SelectedData.selectedType = newValue;
                 }
-                console.log("printing selected type: " + SelectedData.selectedType);
             },
             true
         );

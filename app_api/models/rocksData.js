@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var rockSchema = new mongoose.Schema({
+var RockSchema = new mongoose.Schema({
     type: String,
     name: String,
     major: String,
@@ -8,4 +8,4 @@ var rockSchema = new mongoose.Schema({
     color: String
 });
 
-mongoose.model('RockData', rockSchema, 'RockData');
+mongoose.model('RockData', RockSchema, 'RockData');
