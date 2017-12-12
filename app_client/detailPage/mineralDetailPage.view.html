@@ -16,8 +16,14 @@
 
                 <body>
                     
-                    <table ng-repeat= ></table>
-                    
+<table ng-repeat="m in vm.minerals">
+			<tr>
+				<td>{{m.name}}</td>
+				<td>{{m.hardness}}</td>
+				<td>{{m.streak}}</td>
+				<td>{{m.luster}}</td>
+			</tr>
+		</table>                    
 
                     <!--<table ng-controller="mineralDetailPageCtrl" border="1">-->
                     <!--    <tr ng-repeat="(x, y) in records">-->

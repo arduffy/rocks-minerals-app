@@ -10,11 +10,12 @@ module.exports.getImage = function(req, res)
 {
     console.log("Retrieving Key Store Values");
     
-    var searchTerm = req.params.name;
+    var searchTerm = req.params.searchTerm;
     
-    var flickrurl='https://api.flickr.com/search/' + process.env.FLICKR_KEY + '/' + searchTerm;
+    var googleurl='https://www.googleapis.com/customsearch/v1' +
+    process.env.GOOGLE_KEY + '&cx=' + '&searchType=image&q=' + encodeURIComponent(searchTerm);
     
-    request(flickrurl, function(error, response, body){
+    request(googleurl, function(error, response, body){
         sendJSONresponse(res, "200", body);
     });
 }
