@@ -15,33 +15,23 @@
 
 
                 <body>
-                    
-
-                    <table ng-controller="rockDetailPageCtrl" border="1">
-                        <tr ng-repeat="(x, y) in records">
-                            <td>{{x}}</td>
-                            <td>{{y}}</td>
-                            </tr>
+                    <table id = table>
+                        <tr>
+                            <th>Rock Name</th>
+                            <th>Major</th>
+                            <th>Minor</th>
+                            <th>Color</th>
+                        </tr>
+                        <tr ng-repeat="r in vm.rocks">
+                            <td>{{r.name}}</td>
+                            <td>{{r.major}}</td>
+                            <td>{{r.minor}}</td>
+                            <td>{{r.color}}</td>
+                        </tr>
                     </table>
-
-
-                    <!--<table>-->
-                    <!--    <tr>-->
-                    <!--        <th>Name</th>-->
-                    <!--        <th>Hardness</th>-->
-                    <!--        <th>Streak</th>-->
-                    <!--        <th>Luster</th>-->
-                    <!--    </tr>-->
-                    <!--    <tr>-->
-                    <!--        <td>{{vm.name}}</td>-->
-                    <!--        <td>{{vm.hardness}}</td>-->
-                    <!--        <td>{{vm.streak}}</td>-->
-                    <!--        <td>{{vm.luster}}</td>-->
-                    <!--    </tr>-->
-                    <!--</table>-->
-                    <button type="edit" value="Edit">Edit</button>
-                    <button type="delete" value="Delete">Delete</button>
-                    <button type="search image" value="Search Image">Search Image</button>
+                    <!--<button type="edit" value="Edit">Edit</button>-->
+                    <!--<button type="delete" value="Delete">Delete</button>-->
+                    <!--<button type="search image" value="Search Image">Search Image</button>-->
 
 
                 </body>

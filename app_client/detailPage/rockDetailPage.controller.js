@@ -1,6 +1,5 @@
 (function() {
 
-
     angular
         .module('rocks-minerals-app')
         .controller('rockDetailPageCtrl', rockDetailPageCtrl);
@@ -32,23 +31,9 @@
                 .then(function(response) {
 
                     console.log(response.data)
-
-
-                    $scope.records = [{
-                        "name": response.data[0].name,
-                        "major": response.data[0].major,
-                        "minor": response.data[0].minor,
-                        "color": response.data[0].color
-                    }]
-
-
-
-
-                    // vm.name = response.data[0].name;
-                    // vm.hardness = response.data[0].hardness;
-                    // vm.streak = response.data[0].streak;
-                    // vm.luster - response.data[0].luster;
-
+                    vm.rocks = response.data;
+                    
+                    var obj = {name: "name", major: "major", minor: "minor", color: "color"};
                 })
                 .catch(function(e) {
                     console.log(e);

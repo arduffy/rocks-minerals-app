@@ -15,41 +15,23 @@
 
 
                 <body>
-                    
-<table ng-repeat="m in vm.minerals">
-			<tr>
-				<td>{{m.name}}</td>
-				<td>{{m.hardness}}</td>
-				<td>{{m.streak}}</td>
-				<td>{{m.luster}}</td>
-			</tr>
-		</table>                    
-
-                    <!--<table ng-controller="mineralDetailPageCtrl" border="1">-->
-                    <!--    <tr ng-repeat="(x, y) in records">-->
-                    <!--        <td>{{response.data}}</td>-->
-                    <!--        <td>{{y}}</td>-->
-                    <!--        </tr>-->
-                    <!--</table>-->
-
-
-                    <!--<table>-->
-                    <!--    <tr>-->
-                    <!--        <th>Name</th>-->
-                    <!--        <th>Hardness</th>-->
-                    <!--        <th>Streak</th>-->
-                    <!--        <th>Luster</th>-->
-                    <!--    </tr>-->
-                    <!--    <tr>-->
-                    <!--        <td>{{vm.name}}</td>-->
-                    <!--        <td>{{vm.hardness}}</td>-->
-                    <!--        <td>{{vm.streak}}</td>-->
-                    <!--        <td>{{vm.luster}}</td>-->
-                    <!--    </tr>-->
-                    <!--</table>-->
-                    <button type="edit" value="Edit">Edit</button>
-                    <button type="delete" value="Delete">Delete</button>
-                    <button type="search image" value="Search Image">Search Image</button>
+                        <table id = table>
+                        <tr>
+                            <th>Mineral Name</th>
+                            <th>Hardness</th>
+                            <th>Streak</th>
+                            <th>Luster</th>
+                        </tr>
+                        <tr ng-repeat="m in vm.minerals">
+                            <td>{{m.name}}</td>
+                            <td>{{m.hardness}}</td>
+                            <td>{{m.streak}}</td>
+                            <td>{{m.luster}}</td>
+                        </tr>
+                    </table>
+                    <!--<button type="edit" value="Edit">Edit</button>-->
+                    <!--<button type="delete" value="Delete">Delete</button>-->
+                    <!--<button type="search image" value="Search Image">Search Image</button>-->
 
 
                 </body>

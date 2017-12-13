@@ -2,12 +2,12 @@
 
   angular
     .module('rocks-minerals-app')
-    .directive('sidebar', sidebar);
+    .directive('sidebar', sideBar);
 
-  function sidebar () {
+  function sideBar () {
     return {
       restrict: 'EA',
-      templateUrl: '/common/directives/sidebar/sidbar.template.html'
+      templateUrl: '/common/directives/sideBar/sideBar.template.html'
     };
   }
 })();

@@ -33,11 +33,11 @@
 
           console.log(response.data);
           vm.minerals = response.data;
-          
-          var obj = {name: "name", hardness: "hardness", streak: "streak", luster: "luster" };
-	 
-	        vm.minerals = 
-	        [{ name: "name", hardness: "hardness", streak: "streak", luster: "luster"}];
+
+          var obj = { name: "name", hardness: "hardness", streak: "streak", luster: "luster" };
+
+          // vm.minerals = 
+          // [{ name: "name", hardness: "hardness", streak: "streak", luster: "luster"}];
 
 
 
