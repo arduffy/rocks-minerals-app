@@ -32,6 +32,11 @@
         controller: 'rockDetailPageCtrl',
         controllerAs: 'vm'
       })
+      .when('/googlesearch', {
+        templateUrl: '/google/google.view.html',
+        controller: 'GoogleCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
       
       // use the HTML5 History API

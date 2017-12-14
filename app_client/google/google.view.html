@@ -1,0 +1,33 @@
+<div id="wrapper" ng-class="vm.toggle ? 'toggled' : ''">
+    <sidebar></sidebar>
+<div>
+    <h2>Google Custom Image Search</h2>
+    <br/>
+
+    <form class="form-inline" ng-submit="submit()">
+        Search term:
+        <br/>
+
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="search_term" name="search_term"
+                   placeholder="Search Image"/>
+            <button type="submit" class="btn btn-small btn-primary" id="submit">Search</button>
+        </div>
+    </form>
+    <hr/>
+
+    <div>
+        <p>Top search results: </p>
+        <ol>
+            <li ng-repeat="results in customSearchResults">
+                <a href="{{results.link}}"
+                   target="_blank"><strong>{{results.displayLink}}</strong></a>
+                <br/>
+                {{results.title}}
+                <br/>
+                <i>{{results.snippet}}</i>
+                <br/><br/>
+            </li>
+        </ol>
+    </div>
+</div>

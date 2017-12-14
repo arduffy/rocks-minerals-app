@@ -1,32 +1,69 @@
-#sidebar-wrapper {
-    color: #1c123a;
-    background: #1c123a;
-}
-.sidebar-nav {
-    color: #1c123a;
-    background: #1c123a;
-}
+/*#sidebar-wrapper {*/
+/*    color: #1c123a;*/
+/*    background: #1c123a;*/
+/*}*/
+/*.sidebar-nav {*/
+/*    color: #1c123a;*/
+/*    background: #1c123a;*/
+/*}*/
 
+/*table data*/
 #table {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 60%;
+    margin: auto ;
+    text-align: left;
+    padding-top: 100px;
 }
 
 
 #table td, #table th {
-    border: 1px solid #ddd;
+    border: 4px solid #ddd;
     padding: 6px;
 }
 
-#table tr:nth-child(even){background-color: #f2f2f2;}
+/*#table tr:nth-child(even){background-color: #f2f2f2;}*/
 
-#table tr:hover {background-color: #ddd;}
+#table tr:hover {background-color: #99cccc;}
 
 #table th {
     padding-top: 12px;
     padding-bottom: 12px;
+    padding-right: 15px;
     text-align: left;
-    background-color: #93cf96;
+    background-color: #bbbbbb;
     color: white;
+}
+
+/*home page*/
+.about{
+    font-family: cursive;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    border-color: black;
+    border-style: dashed;
+    padding: 10px;
+    background-color: #99cccc;
+    
+}
+
+
+
+
+
+
+
+
+
+.form-group{
+    width: 60%;
+    margin: auto;
+}
+
+.search-example h1 {
+  background-color: purple
+}
+i {
+  color: slategray;
 }

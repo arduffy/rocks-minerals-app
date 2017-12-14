@@ -1,16 +1,20 @@
 <div id="wrapper" ng-class="vm.toggle ? 'toggled' : ''">
     <sidebar></sidebar>
-
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
                     <h1>{{vm.content}}</h1>
-                    <p>Information about the application</p>
+                    </br>
+                    <p><img src="favicon.ico" height="150" width="150"></img></p>
+                    </br>
+                    <div class = "about">
+                    <p>This application allows you to store and view rocks and minerals along with their types and different characteristics. Eventually...the app will take in a search term such as a rock or mineral name and display an image using the google custom search api. It will also allow for creating, editing, and deleting rocks and minerals.  </p>
+                    </div>
             </div>
             <br>
-            <footer-generic></footer-generic>
+            <!--<footer-generic></footer-generic>-->
         </div>
         
     </div>

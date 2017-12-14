@@ -1,6 +1,11 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*padding: 50px;*/
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  /*padding-left: 100px;*/
+  /*max-width: 500px;*/
+  /*margin: auto;*/
+  background-color: #dfcdb6;
+  text-align: center;
 }
 
 a {

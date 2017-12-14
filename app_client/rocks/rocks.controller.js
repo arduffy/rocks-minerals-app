@@ -15,7 +15,7 @@
         console.log(window.location);
 
         var vm = this;
-        vm.content = "Rock Type Data";
+        vm.content = "Rock Type Selection";
         vm.selectedType = "";
 
         //check selected Rock Type

@@ -15,7 +15,7 @@
     var vm = this;
     console.log(window.location);
     
-    vm.content = "Rocks & Minerals";
+    vm.content = "Rocks & Minerals App";
     
     //check selected Departure
   

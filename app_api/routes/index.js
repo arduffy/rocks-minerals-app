@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ctrlMineralData    = require('../controllers/minerals');
 var ctrlRockData     = require('../controllers/rocks');
-var ctrlGoogleApi = require('../controllers/google');
+var search = require('../controllers/search');
 
 router.get('/minerals', ctrlMineralData.mineralsReadAll);
 //router.get('/minerals/:type', ctrlMineralData.mineralsReadOne);
@@ -18,8 +18,6 @@ router.get('/mineraltypes', ctrlMineralData.specificMineralType );
 router.get('/rocktypes/:type', ctrlRockData.specificRockType);
 router.get('/rocktypes', ctrlRockData.specificRockType );
 
-router.get('/googleapi/:searchTerm', ctrlGoogleApi.getImage);
-
-
+router.get('/customsearch/:search_term');
 
 module.exports = router;
